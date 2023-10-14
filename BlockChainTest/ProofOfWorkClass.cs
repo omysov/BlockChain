@@ -64,7 +64,7 @@ namespace BlockChainTest
                     byte[] data = prepareData(nonce); 
                     hash = sHA.ComputeHash(data);
                     string hash_str = HashStrig.GetHashString(hash);
-                    Console.WriteLine(hash_str);
+                    //Console.WriteLine(hash_str); // скрыть 
                     if (hash_str[..dificult.Length] == dificult)
                     {
                         keyValuePairs["nonce"] = BitConverter.GetBytes(nonce);

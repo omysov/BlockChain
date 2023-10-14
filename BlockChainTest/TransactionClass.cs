@@ -16,20 +16,6 @@ namespace BlockChainTest
             public TXInput[] Vin;
             public TXOutput[] Vout;
 
-            public Transaction NewCoinbaseTX(string to, string data)
-            {
-                if (data == "")
-                {
-                    Console.WriteLine($"Reward to {0}", to);
-                    data = "Reward to " + to;
-                }
-
-                TXInput txin = new TXInput() { Txid = null, Vout = -1, ScriptSig = data };
-                TXOutput txout = new TXOutput() { Value = subsidy, ScriptPubKey = to};
-                Transaction tx = new Transaction() { ID = null, Vin = TXInput{ txin }, Vout = TXOutput{ txout } };
-                tx.SetID();
-                return tx;
-            }
         }
 
         public struct TXOutput
